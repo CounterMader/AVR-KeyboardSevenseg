@@ -76,10 +76,10 @@ ISR(TIMER0_COMP_vect){
 	static unsigned char pointer = 0;
 	unsigned char temp, i;
 	//7 segment refresh routine
-		PORTB = 0;//Turn off all segments
-		PORTA = seg_table[disp_data[pointer]];
-		PORTB = (1 << pointer);
-		if(++pointer == 4) pointer = 0;
+	PORTB = 0;//Turn off all segments
+	PORTA = seg_table[disp_data[pointer]];
+	PORTB = (1 << pointer);
+	if(++pointer == 4) pointer = 0;
 	//Keyboard scan routine
 	if (++x20 == 20){
 		x20 = 0;
